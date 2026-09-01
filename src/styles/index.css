@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink: #0d0f12;
+  --color-surface: #15181d;
+  --color-surface-2: #1d2129;
+  --color-surface-3: #262b34;
+  --color-line: #2a2f38;
+  --color-text: #f2f3f5;
+  --color-muted: #8b93a1;
+  --color-faint: #565d6b;
+  --color-signal: #ff5c39;
+  --color-signal-dim: #4a281d;
+
+  --color-ink-light: #f7f6f3;
+  --color-surface-light: #ffffff;
+  --color-surface-2-light: #f1efe9;
+  --color-line-light: #e4e1d8;
+  --color-text-light: #16181c;
+  --color-muted-light: #6b7280;
+}
+
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+html.light body {
+  background: var(--color-ink-light);
+  color: var(--color-text-light);
+}
+
+::selection {
+  background: var(--color-signal);
+  color: #0d0f12;
+}
+
+* {
+  scrollbar-color: var(--color-surface-3) transparent;
+  scrollbar-width: thin;
+}
+
+.tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise .5s cubic-bezier(.16,1,.3,1) both;
+}

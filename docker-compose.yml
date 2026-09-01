@@ -1,0 +1,7 @@
+services:
+  sports-calendar:
+    build: .
+    container_name: sports-calendar
+    restart: unless-stopped
+    ports:
+      - "8091:80" # change the host port if 8091 is already taken on your LXC
